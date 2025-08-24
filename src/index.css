@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* Local font: Geoglicia (custom, not on Google Fonts) */
+@font-face {
+  font-family: "Geoglicia";
+  src: url("/fonts/Geoglicia-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geoglicia";
+  src: url("/fonts/Geoglicia-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --foreground: 255, 255, 255;
+  --background: 0, 0, 0;
+  --primary: 255, 255, 255;
+  --secondary: 100, 100, 100;
+  --accent: 200, 200, 200;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+#heading{
+  font-family: 'Knewave', sans-serif;
+}
+#subheading{
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Geoglicia", serif;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+.logo-text {
+  font-family: "Montserrat", sans-serif;
+}
+
+.section-padding {
+  @apply py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff 0%, #aaaaaa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* iMac Mockup Styles */
+.imac-mockup {
+  @apply relative rounded-xl overflow-hidden border border-white/20 shadow-2xl;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.imac-mockup-header {
+  @apply flex items-center px-4 py-3 bg-black/40 border-b border-white/10;
+}
+
+.imac-control-buttons {
+  @apply flex space-x-2;
+}
+
+.imac-button {
+  @apply w-3 h-3 rounded-full;
+}
+
+.imac-button-red {
+  @apply bg-red-500 hover:bg-red-600 transition-colors;
+}
+
+.imac-button-yellow {
+  @apply bg-yellow-500 hover:bg-yellow-600 transition-colors;
+}
+
+.imac-button-green {
+  @apply bg-green-500 hover:bg-green-600 transition-colors;
+}
+
+.imac-content {
+  @apply relative;
+}
+
+.imac-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none;
+}
+
+.progress-bar {
+  @apply h-1 bg-white/20 rounded-full overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full bg-white rounded-full;
+}
