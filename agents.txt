@@ -8,7 +8,7 @@ replit
 claude 
 cursor
 
-
+imgkit - zrx6qd7ml
 
 ### 🔷 **Project Name Idea**: "NeuroDesk" or "SmartSphere" or "Cortex"
 
