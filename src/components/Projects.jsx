@@ -50,6 +50,26 @@ export default function Projects() {
       },
     },
     {
+      title: "TruthLink",
+      description:
+        "TruthLink is an anonymous crime reporting and tracking platform that lets anyone securely upload evidence, submit a tip to the correct authority, and receive a unique ID to follow progress without revealing their identity.",
+      image: "./truthlink.jpg",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "NextAuth.js",
+        "Tailwind CSS",
+        "GeminiAI",
+        "Neon Database",
+        "BCrypt",
+      ],
+      links: {
+        demo: "https://truthlink.vercel.app/",
+        github: "https://github.com/nitpatel678/next.js_truthlink",
+      },
+    },
+    {
       title: "Gemini Clone",
       description:
         "Gemini Clone is a simple React-based frontend application that replicates the Gemini AI interface. It integrates directly with the Gemini API to provide a seamless conversational experience without requiring any backend. Designed as a lightweight UI copy, it demonstrates clean React architecture and responsive styling while showcasing Gemini’s AI capabilities in a minimal, modern layout.",
