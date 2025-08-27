@@ -57,7 +57,7 @@ export default function Hero() {
           </button>
 
           <a
-            href="https://drive.google.com/your-resume-link" // 🔗 replace this with your Google Drive link
+            href="https://drive.google.com/file/d/1xPjkCagWXnQCSUCpdu37UDnVXu9kuF4G/view?usp=sharing" // 🔗 replace this with your Google Drive link
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-white text-black font-medium rounded-full cursor-pointer hover:bg-white/90 transition-colors font-poppins inline-flex items-center justify-center"
