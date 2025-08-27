@@ -53,7 +53,7 @@ export default function Projects() {
       title: "TruthLink",
       description:
         "TruthLink is an anonymous crime reporting and tracking platform that lets anyone securely upload evidence, submit a tip to the correct authority, and receive a unique ID to follow progress without revealing their identity.",
-      image: "./truthlink.jpg",
+      image: "./truthlink.png",
       tags: [
         "Next.js",
         "TypeScript",
