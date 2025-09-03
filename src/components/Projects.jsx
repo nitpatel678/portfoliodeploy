@@ -26,29 +26,7 @@ export default function Projects() {
       },
     },
 
-    {
-      title: "SerenityAI",
-      description:
-        "SerenityAI is a full-stack AI-powered therapy assistant that offers a safe, conversational space for users to reflect on their emotions, track mental well-being, and receive AI-guided support in real time. Built with Next.js, Express.js, and MongoDB, and integrated with EchoAPI, it provides an accessible, intelligent companion for improving mental health and self-reflection.",
-      image: "./serenity.png",
-      tags: ["Next.js", "Express.js", "MongoDB", "EchoAPI", "Tailwind CSS"],
-      links: {
-        demo: "https://example.com",
-        github: "https://github.com/nitpatel678/Serenity_AI",
-      },
-    },
-
-    {
-      title: "VerveAI",
-      description:
-        "VerveAI is an advanced AI-powered personal assistant designed to transform interview preparation. By combining intelligent conversational agents with immersive 3D simulations, it delivers realistic, interactive mock interviews that replicate real-world scenarios. VerveAI adapts to each user’s needs, offering personalized feedback on responses, body language, and confidence, making it the ultimate tool for mastering interviews with cutting-edge AI and 3D technology.",
-      image: "./verve.png",
-      tags: ["React", "Node.js", "Three.js", "AI", "Express.js"],
-      links: {
-        demo: "https://example.com",
-        github: "https://github.com",
-      },
-    },
+   
     {
       title: "TruthLink",
       description:
