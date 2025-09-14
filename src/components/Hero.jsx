@@ -37,7 +37,7 @@ export default function Hero() {
           id="subheading"
           className="text-xl md:text-2xl lg:text-3xl text-white/80 mb-10 font-poppins"
         >
-          Full-Stack Developer & UI/UX Designer
+          Full-Stack Developer
         </motion.h2>
 
         {/* Buttons */}

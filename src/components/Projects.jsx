@@ -10,7 +10,7 @@ export default function Projects() {
     {
       title: "Cortex",
       description:
-        "Cortex is an AI-powered SaaS platform designed to streamline creative workflows. It enables users to generate high-quality content such as articles and blog titles, while also offering advanced image manipulation tools like background and object removal. This freemium platform enhances productivity by leveraging AI to automate time-consuming tasks.",
+        "Cortex is an AI-powered web platform designed to streamline creative workflows. It enables users to generate high-quality content such as articles and blog titles, while also offering advanced image manipulation tools like background and object removal. This freemium platform enhances productivity by leveraging AI to automate time-consuming tasks.",
       image: "./cortex.png",
       tags: [
         "React",
@@ -26,7 +26,6 @@ export default function Projects() {
       },
     },
 
-   
     {
       title: "TruthLink",
       description:
@@ -47,6 +46,27 @@ export default function Projects() {
         github: "https://github.com/nitpatel678/next.js_truthlink",
       },
     },
+
+    {
+      title: "Vaani",
+      description:
+        "Vaani is a crowdsourced civic issue reporting and resolution system. Citizens can report local problems (like potholes, broken streetlights, garbage issues) through a mobile app, while administrators and departments manage, track, and resolve these complaints via a dedicated web portal. It integrates media uploads, secure authentication, and role-based access to streamline communication between citizens and authorities.",
+      image: "./vaani.png",
+      tags: [
+        "React Native",
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Supabase Storage",
+        "JWT Authentication",
+        
+      ],
+      links: {
+        github: "https://github.com/nitpatel678/Vaani_Repo",
+      },
+    },
+
     {
       title: "Gemini Clone",
       description:
