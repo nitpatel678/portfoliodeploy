@@ -48,6 +48,28 @@ export default function Projects() {
     },
 
     {
+      title: "TradeLens",
+      description:
+        "TradeLens is an AI-powered modern stock market app that lets users track real-time stock prices, set personalized alerts, explore detailed company insights, and manage watchlists. It also includes an admin dashboard for managing stocks, publishing news, and monitoring user activity, with AI-driven workflows for automated notifications and daily market summaries.",
+      image: "./tradelens.png",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Shadcn",
+        "Tailwind CSS",
+        "Better Auth",
+        "Inngest",
+        "Finnhub",
+        "MongoDB",
+        "Nodemailer",
+      ],
+      links: {
+        demo: "https://tradelens-xi.vercel.app/", // replace with your live demo URL
+        github: "https://github.com/nitpatel678/fullstack_stock",
+      },
+    },
+
+    {
       title: "Vaani",
       description:
         "Vaani is a crowdsourced civic issue reporting and resolution system. Citizens can report local problems (like potholes, broken streetlights, garbage issues) through a mobile app, while administrators and departments manage, track, and resolve these complaints via a dedicated web portal. It integrates media uploads, secure authentication, and role-based access to streamline communication between citizens and authorities.",
@@ -60,7 +82,6 @@ export default function Projects() {
         "MongoDB",
         "Supabase Storage",
         "JWT Authentication",
-        
       ],
       links: {
         github: "https://github.com/nitpatel678/Vaani_Repo",

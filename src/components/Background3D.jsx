@@ -4,7 +4,7 @@ import { useScroll } from "framer-motion";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
 
-function Particles({ count = 699 }) { // reduced density
+function Particles({ count = 599 }) { // reduced density
   const mesh = useRef(null);
   const { viewport, camera } = useThree();
 
@@ -73,7 +73,7 @@ function Particles({ count = 699 }) { // reduced density
         size={0.03}
         vertexColors
         transparent
-        opacity={0.5}
+        opacity={0.3}
         sizeAttenuation
       />
     </points>
