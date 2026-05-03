@@ -54,16 +54,13 @@ export default function Skills() {
         { name: "Java (DSA)", level: 85, icon: <Flame size={20} /> },
         { name: "C (Basics)", level: 75, icon: <Braces size={20} /> },
         { name: "React Native", level: 80, icon: <Smartphone size={20} /> },
-        { name: "Docker", level: 70, icon: <Box size={20} /> },
+        { name: "Python", level: 60, icon: <Box size={20} /> },
       ],
     },
   ];
 
   const otherTechnologies = [
     { name: "Git", icon: <GitBranch size={16} /> },
-    { name: "Docker", icon: <Box size={16} /> },
-    { name: "AWS", icon: <Cloud size={16} /> },
-    { name: "Firebase", icon: <Flame size={16} /> },
     { name: "Next.js", icon: <LayoutGrid size={16} /> },
     { name: "Redux", icon: <Share size={16} /> },
     { name: "Postman", icon: <Send size={16} /> },
