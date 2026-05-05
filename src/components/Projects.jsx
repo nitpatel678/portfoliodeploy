@@ -8,6 +8,25 @@ export default function Projects() {
 
   const projects = [
     {
+  title: "Treo",
+  description:
+    "Treo is an AI-powered website builder that allows users to generate customized landing pages using prompts. It features a credit-based system with Stripe payment integration, along with version control and community publishing for efficient project management.",
+  image: "./treo.png",
+  tags: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Tailwind CSS",
+    "Stripe API",
+    "Vercel"
+  ],
+  links: {
+    demo: "https://nitin-portfolio-three.vercel.app/", // replace with actual demo if different
+    github: "https://github.com/nitpatel678" // replace with exact repo link
+  },
+},
+    {
       title: "Cortex",
       description:
         "Cortex is an AI-powered web platform designed to streamline creative workflows. It enables users to generate high-quality content such as articles and blog titles, while also offering advanced image manipulation tools like background and object removal. This freemium platform enhances productivity by leveraging AI to automate time-consuming tasks.",
