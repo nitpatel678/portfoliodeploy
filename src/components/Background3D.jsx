@@ -1,88 +1,80 @@
 import { useRef, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useScroll } from "framer-motion";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import * as THREE from "three";
 
-function Particles({ count = 599 }) { // reduced density
-  const mesh = useRef(null);
-  const { viewport, camera } = useThree();
+/* ===================== PARTICLES ===================== */
+function Particles({ count = 800 }) {
+  const mesh = useRef();
+  const mouse = useRef([0, 0]);
 
-  const particles = useRef();
-  const colors = useRef();
+  const positions = useRef(new Float32Array(count * 3));
 
   useEffect(() => {
-    const posArray = new Float32Array(count * 3);
-    const colArray = new Float32Array(count * 3);
-
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
 
-      posArray[i3] = (Math.random() - 0.5) * 10;
-      posArray[i3 + 1] = (Math.random() - 0.5) * 10;
-      posArray[i3 + 2] = (Math.random() - 0.5) * 10;
-
-      colArray[i3] = 1;
-      colArray[i3 + 1] = 1;
-      colArray[i3 + 2] = 1;
+      positions.current[i3] = (Math.random() - 0.5) * 20;
+      positions.current[i3 + 1] = (Math.random() - 0.5) * 20;
+      positions.current[i3 + 2] = (Math.random() - 0.5) * 20;
     }
 
-    particles.current = posArray;
-    colors.current = colArray;
+    const handleMouseMove = (e) => {
+      mouse.current = [
+        (e.clientX / window.innerWidth - 0.5) * 2,
+        (e.clientY / window.innerHeight - 0.5) * 2,
+      ];
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [count]);
 
   useFrame((state, delta) => {
-    if (!mesh.current || !particles.current) return;
+    if (!mesh.current) return;
 
-    mesh.current.rotation.x += delta * 0.01;
-    mesh.current.rotation.y += delta * 0.02;
-
-    const positions = mesh.current.geometry.attributes.position.array;
+    const pos = mesh.current.geometry.attributes.position.array;
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
 
-      positions[i3] += Math.sin(state.clock.elapsedTime * 0.1 + i) * 0.002;
-      positions[i3 + 1] += Math.cos(state.clock.elapsedTime * 0.1 + i) * 0.002;
+      // smooth floating motion
+      pos[i3 + 1] += Math.sin(state.clock.elapsedTime + i) * 0.0005;
+
+      // subtle mouse interaction
+      pos[i3] += mouse.current[0] * 0.0005;
+      pos[i3 + 1] += mouse.current[1] * 0.0005;
     }
 
+    mesh.current.rotation.y += delta * 0.02;
     mesh.current.geometry.attributes.position.needsUpdate = true;
   });
 
   return (
     <points ref={mesh}>
       <bufferGeometry>
-        {particles.current && (
-          <bufferAttribute
-            attach="attributes-position"
-            count={count}
-            array={particles.current}
-            itemSize={3}
-          />
-        )}
-        {colors.current && (
-          <bufferAttribute
-            attach="attributes-color"
-            count={count}
-            array={colors.current}
-            itemSize={3}
-          />
-        )}
+        <bufferAttribute
+          attach="attributes-position"
+          count={count}
+          array={positions.current}
+          itemSize={3}
+        />
       </bufferGeometry>
+
       <pointsMaterial
-        size={0.03}
-        vertexColors
+        size={0.02}
+        color="#ffffff"
         transparent
-        opacity={0.3}
+        opacity={0.25}
         sizeAttenuation
       />
     </points>
   );
 }
 
+/* ===================== MOVING PLANES ===================== */
 function MovingPlanes() {
-  const group = useRef(null);
-  const { viewport } = useThree();
+  const group = useRef();
 
   useFrame((state) => {
     if (!group.current) return;
@@ -98,7 +90,7 @@ function MovingPlanes() {
     <group ref={group}>
       {Array.from({ length: 5 }).map((_, i) => (
         <mesh key={i} position={[i * 2 - 4, 0, -5 - i]}>
-          <planeGeometry args={[2, 2, 1, 1]} />
+          <planeGeometry args={[2, 2]} />
           <meshBasicMaterial
             color="#ffffff"
             wireframe
@@ -111,31 +103,47 @@ function MovingPlanes() {
   );
 }
 
+/* ===================== SCENE ===================== */
 function Scene() {
   const { scrollYProgress } = useScroll();
-  const group = useRef(null);
+  const group = useRef();
 
-  useFrame(() => {
+  useFrame(({ camera, mouse }) => {
     if (!group.current) return;
+
+    // scroll rotation
     group.current.rotation.y = scrollYProgress.get() * Math.PI;
+
+    // smooth camera movement (premium feel)
+    camera.position.x += (mouse.x * 0.5 - camera.position.x) * 0.05;
+    camera.position.y += (mouse.y * 0.5 - camera.position.y) * 0.05;
   });
 
   return (
     <group ref={group}>
-      <Particles />
+      {/* depth layers */}
+      <Particles count={700} />
+      <Particles count={300} />
       <MovingPlanes />
     </group>
   );
 }
 
+/* ===================== MAIN ===================== */
 export default function Background3D() {
   return (
     <div className="fixed inset-0 z-0">
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
         <color attach="background" args={["#000000"]} />
+
         <Scene />
+
         <EffectComposer>
-          <Bloom luminanceThreshold={0.2} intensity={0.425} /> 
+          <Bloom
+            luminanceThreshold={0}
+            luminanceSmoothing={0.9}
+            intensity={0.6}
+          />
         </EffectComposer>
       </Canvas>
     </div>
