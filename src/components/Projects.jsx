@@ -22,8 +22,8 @@ export default function Projects() {
     "Vercel"
   ],
   links: {
-    demo: "https://nitin-portfolio-three.vercel.app/", // replace with actual demo if different
-    github: "https://github.com/nitpatel678" // replace with exact repo link
+    demo: "https://treo-ai-site-builder.vercel.app/", 
+    github: "https://github.com/nitpatel678/treo_ai_site_builder"
   },
 },
     {
