@@ -62,7 +62,6 @@ export default function Skills() {
   const otherTechnologies = [
     { name: "Git", icon: <GitBranch size={16} /> },
     { name: "Next.js", icon: <LayoutGrid size={16} /> },
-    { name: "Redux", icon: <Share size={16} /> },
     { name: "Postman", icon: <Send size={16} /> },
   ];
 
